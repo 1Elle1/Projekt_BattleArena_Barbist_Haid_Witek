@@ -38,7 +38,7 @@ public class Gnome extends CharackterTyps{
 	@Override
 	public String toString() {
 		return "Gnome [attackValue=" + attackValue + ", specialAbilityProbability=" + specialAbilityProbability
-				+ ", name=" + name + ", healthPoints=" + healthPoints + ", specialAbilityActive=" + specialAbilityActive
+				+ ", name=" + this.getName() + ", healthPoints=" + this.getHealthPoints() + ", specialAbilityActive=" + this.isSpecialAbilityActive()
 				+ "]";
 	}
 
@@ -46,7 +46,11 @@ public class Gnome extends CharackterTyps{
 	
 	
 	public boolean dwarfHeadNut() {
-		if(this.specialAbilityActive && this.healthPoints < 50) {
+		if(this.isSpecialAbilityActive() && this.getHealthPoints() <= 50 && this.calculateChanceOfSpecialAbility() == 3) {
+			return true;
+		}else if(this.isSpecialAbilityActive() && this.getHealthPoints() <= 20 && this.calculateChanceOfSpecialAbility() == 5) {
+			return true;
+		}else if(this.isSpecialAbilityActive() && this.getHealthPoints() <= 10 && this.calculateChanceOfSpecialAbility() == 7) {
 			return true;
 		}
 		return false;
@@ -60,13 +64,13 @@ public class Gnome extends CharackterTyps{
 	public int calculateChanceOfSpecialAbility() {
 		int numberOfRandomNumber = ThreadLocalRandom.current().nextInt(0, 10 + 1);
 		if(numberOfRandomNumber >= 1 && numberOfRandomNumber <=3) {
-			return 30;
-		}else if(numberOfRandomNumber >= 1 && numberOfRandomNumber <=5) {
-			return 50;
-		}else if(numberOfRandomNumber >= 1 && numberOfRandomNumber <=7){
-			return 70;
+			return 3;
+		}else if(numberOfRandomNumber >= 3 && numberOfRandomNumber <=5) {
+			return 5;
+		}else if(numberOfRandomNumber >= 5 && numberOfRandomNumber <=7){
+			return 7;
 		}
-		return 0;
+		return 10;
 	}
 
 }
