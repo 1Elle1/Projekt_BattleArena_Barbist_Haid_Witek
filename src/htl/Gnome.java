@@ -43,6 +43,13 @@ public class Gnome extends CharackterTyps{
 
 	
 	
+	public boolean dwarfHeadNut() {
+		if(this.specialAbilityActive && this.healthPoints < 50) {
+			return true;
+		}
+		return false;
+	}
+	
 	
 	
 	
