@@ -6,6 +6,13 @@ public abstract class CharackterTyps {
 	public int healthPoints;
 	public boolean specialAbilityActive;
 	
+	public CharackterTyps(String name, boolean specialAbilityActive) {
+		super();
+		this.name = name;
+		this.healthPoints = 100;
+		this.specialAbilityActive = specialAbilityActive;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -25,12 +32,7 @@ public abstract class CharackterTyps {
 		this.specialAbilityActive = specialAbilityActive;
 	}
 	
-	public CharackterTyps(String name, int healthPoints, boolean specialAbilityActive) {
-		super();
-		this.name = name;
-		this.healthPoints = healthPoints;
-		this.specialAbilityActive = specialAbilityActive;
-	}
+	
 	
 	public void attackEnemy(Enemy) { }
 	
