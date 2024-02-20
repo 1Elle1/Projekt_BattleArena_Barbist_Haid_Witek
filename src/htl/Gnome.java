@@ -57,5 +57,16 @@ public class Gnome extends CharackterTyps{
 	}
 	
 	
+	public int calculateChanceOfSpecialAbility() {
+		int numberOfRandomNumber = ThreadLocalRandom.current().nextInt(0, 10 + 1);
+		if(numberOfRandomNumber >= 1 && numberOfRandomNumber <=3) {
+			return 30;
+		}else if(numberOfRandomNumber >= 1 && numberOfRandomNumber <=5) {
+			return 50;
+		}else if(numberOfRandomNumber >= 1 && numberOfRandomNumber <=7){
+			return 70;
+		}
+		return 0;
+	}
 
 }
