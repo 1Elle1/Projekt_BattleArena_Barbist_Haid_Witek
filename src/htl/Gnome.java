@@ -1,5 +1,7 @@
 package htl;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Gnome extends CharackterTyps{
 	
 	private int attackValue;
@@ -50,7 +52,9 @@ public class Gnome extends CharackterTyps{
 		return false;
 	}
 	
-	
+	public void calculateAttackValue() {
+		this.attackValue = ThreadLocalRandom.current().nextInt(15, 25 + 1);
+	}
 	
 	
 
