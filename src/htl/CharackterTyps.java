@@ -2,9 +2,9 @@ package htl;
 
 public abstract class CharackterTyps {
 
-	public String name;
-	public int healthPoints;
-	public boolean specialAbilityActive;
+	private String name;
+	private int healthPoints;
+	private boolean specialAbilityActive;
 	
 	public CharackterTyps(String name, boolean specialAbilityActive) {
 		super();
@@ -43,12 +43,16 @@ public abstract class CharackterTyps {
 	}
 	
 	
-	public boolean activateSpecialSkill(boolean specialAbilityActive) {
-		
+	public void activateSpecialSkill() {
+		if(!this.specialAbilityActive) {
+			this.specialAbilityActive = true;
+		}
 	}
 	
-	public boolean deactivateSpecialSkill(boolean specialAbilityActive) {
-		
+	public void deactivateSpecialSkill() {
+		if(this.specialAbilityActive) {
+			this.specialAbilityActive = false;
+		}
 	}
 	
 	
