@@ -34,7 +34,23 @@ public abstract class CharackterTyps {
 	
 	
 	
-	public void attackEnemy(Enemy) { }
+	public void attackEnemy(CharackterTyps enemy) { 
+		
+	}
+	
+	public void getDamage(int points) {
+		
+	}
+	
+	
+	public boolean activateSpecialSkill(boolean specialAbilityActive) {
+		
+	}
+	
+	public boolean deactivateSpecialSkill(boolean specialAbilityActive) {
+		
+	}
+	
 	
 	
 	
