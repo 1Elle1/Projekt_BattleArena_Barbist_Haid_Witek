@@ -30,10 +30,24 @@ public class Gnome extends CharackterTyps{
 	}
 
 
+	/**
+	 * Calculates and sets the attack value for the gnome character. 
+	 * The attack value is determined by generating a random integer 
+	 * between 15 and 25 (inclusive).
+	 */
 	public void calculateAttackValue() {
 		this.attackValue = ThreadLocalRandom.current().nextInt(15, 25 + 1);
 	}
 	
+	
+	
+	/**
+	 * Executes the DwarfHeadNutt special ability. If active and successful, 
+	 * doubles the gnome's attack value for this attack, otherwise, halves it for this round.
+	 * Prints the outcome message.
+	 * 
+	 * @return true if the ability was successfully activated, false otherwise.
+	 */
 	public boolean dwarfHeadNut() {
 		
 		if (!this.isSpecialAbilityActive()) {
@@ -43,7 +57,7 @@ public class Gnome extends CharackterTyps{
 		
 		if(this.isSpecialAbilitySuccessful()) {
 			this.attackValue *= 2;
-			System.out.println("Die Zwergenkopfnuss war erfolgreich, du machst jetzt in der nächten Runde doppelt so viel schaden!");
+			System.out.println("Die Zwergenkopfnuss war erfolgreich, du machst jetzt in dieser Runde doppelt so viel schaden!");
 			return true;
 		}else {
 			this.attackValue /= 2;
@@ -53,6 +67,13 @@ public class Gnome extends CharackterTyps{
 	}
 	
 	
+	/**
+	 * Determines if the special ability activation is successful based on the gnome's current health and a percentage.
+	 * Success criteria vary by health: below 10 HP has the highest chance, below 20 HP has a moderate chance,
+	 * and below 50 HP has the lowest chance of activation success.
+	 *
+	 * @return true if the special ability activation is successful, false otherwise.
+	 */
 	 private boolean isSpecialAbilitySuccessful() {
 	    int numberOfRandomNumber = ThreadLocalRandom.current().nextInt(0, 10 + 1);
 	    System.out.println(numberOfRandomNumber);
