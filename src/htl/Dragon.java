@@ -9,8 +9,8 @@ public class Dragon extends CharackterTyps{
 	private int specialAbilityProbability;
 	
 
-	public Dragon(String name, boolean specialAbilityActive) {
-		super(name, specialAbilityActive);
+	public Dragon(String name) {
+		super(name);
 		
 	}
 	
