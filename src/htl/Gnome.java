@@ -7,8 +7,8 @@ public class Gnome extends CharackterTyps{
 	private int attackValue;
 	
 
-	public Gnome(String name, boolean specialAbilityActive) {
-		super(name, specialAbilityActive);
+	public Gnome(String name) {
+		super(name);
 		
 	}
 	
@@ -58,6 +58,18 @@ public class Gnome extends CharackterTyps{
 		return false;
 		
 		
+	}
+	
+	public void doubleTheDamage() {
+		if(this.isSpecialAbilityActive() == true && this.dwarfHeadNut() == true) {
+			this.attackValue *= 2;
+		}
+	}
+	
+	public void halveTheDamage() {
+		if(this.isSpecialAbilityActive() == true && this.dwarfHeadNut() == true) {
+			this.attackValue *= 2;
+		}
 	}
 	
 	
