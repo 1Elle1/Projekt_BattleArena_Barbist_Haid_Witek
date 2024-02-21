@@ -1,5 +1,7 @@
 package htl;
 
+import java.util.Scanner;
+
 public abstract class CharackterTyps {
 
 	private String name;
@@ -42,6 +44,10 @@ public abstract class CharackterTyps {
 		
 	}
 	
+	Scanner sc= new Scanner (System.in);
+	
+	int eingabe = sc.nextInt();
+	
 	
 	public void activateSpecialSkill() {
 		if(!this.specialAbilityActive) {
@@ -57,6 +63,6 @@ public abstract class CharackterTyps {
 	
 	
 	
-	
+
 
 }
