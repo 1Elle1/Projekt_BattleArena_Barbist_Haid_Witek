@@ -8,11 +8,11 @@ public abstract class CharackterTyps {
 	private int healthPoints;
 	private boolean specialAbilityActive;
 	
-	public CharackterTyps(String name, boolean specialAbilityActive) {
+	public CharackterTyps(String name) {
 		super();
 		this.name = name;
 		this.healthPoints = 100;
-		this.specialAbilityActive = specialAbilityActive;
+		this.specialAbilityActive = false;
 	}
 	
 	public String getName() {
@@ -44,9 +44,9 @@ public abstract class CharackterTyps {
 		
 	}
 	
-	Scanner sc= new Scanner (System.in);
+	//Scanner sc= new Scanner (System.in);
 	
-	int eingabe = sc.nextInt();
+	//int eingabe = sc.nextInt();
 	
 	
 	public void activateSpecialSkill() {
