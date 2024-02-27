@@ -36,7 +36,7 @@ public class Gnome extends CharackterTyps{
 	 * between 15 and 25 (inclusive).
 	 */
 	public void calculateAttackValue() {
-		this.attackValue = ThreadLocalRandom.current().nextInt(15, 25 + 1);
+		this.setAttackValue(ThreadLocalRandom.current().nextInt(15, 25 + 1));
 	}
 	
 	

@@ -1,14 +1,10 @@
 package htl;
 
-public class Arena{
-	
-	
-	
-	
+public class App {
+
 	public static void main(String[] args) {
-		
+		// TODO Auto-generated method stub
+
 	}
-	
-	
 
 }
