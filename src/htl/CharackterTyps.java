@@ -2,7 +2,7 @@ package htl;
 
 import java.util.Scanner;
 
-public abstract class CharackterTyps {
+public abstract class CharackterTyps extends Arena {
 
 	private String name;
 	private int healthPoints;
@@ -36,13 +36,12 @@ public abstract class CharackterTyps {
 	
 	
 	
-	public void attackEnemy(CharackterTyps enemy) { 
-		
-	}
 	
-	public void getDamage(int points) {
-		
-	}
+	public abstract void attack(CharackterTyps enemy);
+	
+	public abstract void getDamage(int points);
+	
+	
 	
 	//Scanner sc= new Scanner (System.in);
 	
