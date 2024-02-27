@@ -78,11 +78,11 @@ public class Gnome extends CharackterTyps{
 	    int numberOfRandomNumber = ThreadLocalRandom.current().nextInt(0, 10 + 1);
 	    System.out.println(numberOfRandomNumber);
 	        
-	    if (this.getHealthPoints() <= 10 && numberOfRandomNumber <= 7) {
+	    if (this.getHealthPoints() <= 50 && numberOfRandomNumber <= 3) {
 	       return true;
 	    } else if (this.getHealthPoints() <= 20 && numberOfRandomNumber <= 5) {
 	        return true;
-	    } else if (this.getHealthPoints() <= 50 && numberOfRandomNumber <= 3) {
+	    } else if (this.getHealthPoints() <= 10 && numberOfRandomNumber <= 7) {
 	        return true;
 	    }
 	    return false;
