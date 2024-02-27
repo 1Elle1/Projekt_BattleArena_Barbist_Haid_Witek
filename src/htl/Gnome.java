@@ -87,7 +87,7 @@ public class Gnome extends CharackterTyps{
 	    }
 	    return false;
 	    }
-	 
+	 /dvduq
 
 	public void attack(CharackterTyps enemy) {
 		
