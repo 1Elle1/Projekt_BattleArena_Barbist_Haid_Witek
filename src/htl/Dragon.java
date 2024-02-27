@@ -3,7 +3,7 @@ package htl;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Dragon extends CharackterTyps{
+public  class Dragon extends CharackterTyps{
 	
 	private int attackValue;
 	private int specialAbilityProbability;
@@ -44,13 +44,14 @@ public class Dragon extends CharackterTyps{
 	}
 
 	
-	
+	//khiuhiudiuqhdiuhiuhdiu
 
 	
 	
 	public void DragonFlyOn() {
 		activateSpecialSkill();
 			}
+	
 	public void DragonFlyOff() {
 		deactivateSpecialSkill();
 			}
@@ -60,5 +61,13 @@ public class Dragon extends CharackterTyps{
 		
 	
 	}
+	public  void attack(CharackterTyps enemy) {
+		
+		
+	}
+	
+		public  void getDamage(int points) {
+			
+		}
 
 }
