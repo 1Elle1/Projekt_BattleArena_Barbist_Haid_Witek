@@ -99,9 +99,11 @@ public class Gnome extends CharackterTyps{
 	 
 
 	public void attack(CharackterTyps enemy) {
-		
+		this.getHealthPoints() -= 
 		
 	}
+	
+	
 	public void getDamage(int points) {
 		if(this.healthPointsGnome > 0 && this.healthPointsGnome > points) {
 			this.healthPointsGnome -= points;

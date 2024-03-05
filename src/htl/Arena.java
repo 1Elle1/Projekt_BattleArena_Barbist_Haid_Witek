@@ -12,9 +12,11 @@ public class Arena{
 	public static int pickBeginner() {
 		int numberOfRandomNumber = ThreadLocalRandom.current().nextInt(0, 1 + 1);
 		if(numberOfRandomNumber == 0) {
-			return 0;
-		}else {
+			System.out.println("Player 1, du fängst an!");
 			return 1;
+		}else {
+			System.out.println("Player 2, du fängst an!");
+			return 2;
 		}
 	}
 	
@@ -58,7 +60,8 @@ public class Arena{
 	
 	public static void main(String[] args) {
 		 Arena arena = new Arena();
-		 arena.playerSelection();   
+		 arena.playerSelection();  
+		 System.out.println(pickBeginner());
 		
 		
 	}
