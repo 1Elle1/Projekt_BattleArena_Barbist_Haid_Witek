@@ -7,13 +7,21 @@ public class Dragon extends CharackterTyps{
 	
 	private int attackValue;
 	private int specialAbilityProbability;
-	
+	public  int healthpointsDragon;
 
 	public Dragon(String name) {
 		super(name);
 		
 	}
 	
+	public int getHealthpointsDragon() {
+		return healthpointsDragon;
+	}
+
+	public void setHealthpointsDragon(int healthpointsDragon) {
+		this.healthpointsDragon = healthpointsDragon;
+	}
+
 	public int getAttackValue() {
 		return attackValue;
 	}
@@ -48,12 +56,7 @@ public class Dragon extends CharackterTyps{
 
 	
 	
-	public void DragonFlyOn() {
-		activateSpecialSkill();
-			}
-	public void DragonFlyOff() {
-		deactivateSpecialSkill();
-			}
+	
 	
 	public void calculateAttackValue() {
 		this.attackValue = ThreadLocalRandom.current().nextInt(20, 25 + 1);
@@ -65,13 +68,12 @@ public class Dragon extends CharackterTyps{
 			if (!this.isSpecialAbilityActive()) {
 				this.attackValue = ThreadLocalRandom.current().nextInt(5, 10 + 1);
 				
-		       
-		    }
 			 return false;
-	
-		
+		    }
+			 
 		if(this.isSpecialAbilitySuccessful()) {
-			System.out.println("Die Zwergenkopfnuss war erfolgreich, du machst jetzt in dieser Runde doppelt so viel schaden!");
+			this.healthpointsDragon += 10;
+			System.out.println("Der drache ist erfolgreicg abgehoben und hat 10 zusatz leben");
 			return true;
 		}else {
 			return false;
@@ -81,7 +83,16 @@ public class Dragon extends CharackterTyps{
 		private boolean isSpecialAbilitySuccessful() {
 		    int numberOfRandomNumber = ThreadLocalRandom.current().nextInt(5, 10 + 1);
 		    System.out.println(numberOfRandomNumber);
+		    
+		    return false;
 		}
+		
+		
+		
+		
+		
+		
+		
 public  void attack(CharackterTyps enemy) {
 
 }
