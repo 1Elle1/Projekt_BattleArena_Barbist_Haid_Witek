@@ -12,10 +12,10 @@ public class Dragon extends CharackterTyps{
 	public Dragon(String name) {
 		super(name);
 		
-	}
+	} 
 	
 	public int getHealthpointsDragon() {
-		return healthpointsDragon;
+		return  healthpointsDragon;
 	}
 
 	public void setHealthpointsDragon(int healthpointsDragon) {
