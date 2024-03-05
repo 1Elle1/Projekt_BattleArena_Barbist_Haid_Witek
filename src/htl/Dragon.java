@@ -60,14 +60,18 @@ public  class Dragon extends CharackterTyps{
 		this.attackValue = ThreadLocalRandom.current().nextInt(20, 25 + 1);
 		
 	
-	}
-	public  void attack(CharackterTyps enemy) {
-		
-		
-	}
 	
-		public  void getDamage(int points) {
-			
-		}
 
-}
+	}
+
+	@Override
+	public void attack(CharackterTyps enemy) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void getDamage(int points) {
+		// TODO Auto-generated method stub
+		
+	}}
