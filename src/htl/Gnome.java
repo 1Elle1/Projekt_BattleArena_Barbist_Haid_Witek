@@ -5,6 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Gnome extends CharackterTyps{
 	
 	private int attackValue;
+	public int healthPointsGnome;
 	
 
 	public Gnome(String name) {
@@ -12,6 +13,14 @@ public class Gnome extends CharackterTyps{
 		
 	}
 	
+	public int getHealthPointsGnome() {
+		return healthPointsGnome;
+	}
+
+	public void setHealthPointsGnome(int healthPointsGnome) {
+		this.healthPointsGnome = healthPointsGnome;
+	}
+
 	public int getAttackValue() {
 		return attackValue;
 	}
@@ -91,12 +100,16 @@ public class Gnome extends CharackterTyps{
 
 	public void attack(CharackterTyps enemy) {
 		
+		if ( isSpecialAbilityActive()) {
+			
+			
+		}
 		
 		
 	}
 	public void getDamage(int points) {
 		
-		
+			
 	}
 	
 }
