@@ -22,7 +22,7 @@ public class Dragon extends CharackterTyps{
 		this.healthpointsDragon = healthpointsDragon;
 	}
 
-	public int getAttackValue() {
+	public int getAttackValue() { 
 		return attackValue;
 	}
 
