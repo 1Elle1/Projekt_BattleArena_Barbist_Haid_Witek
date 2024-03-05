@@ -99,12 +99,7 @@ public class Gnome extends CharackterTyps{
 	 //dvduq
 
 	public void attack(CharackterTyps enemy) {
-		
-		if ( isSpecialAbilityActive()) {
-			
-			
-		}
-		
+		enemy
 		
 	}
 	public void getDamage(int points) {
