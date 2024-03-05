@@ -62,6 +62,7 @@ public abstract class CharackterTyps extends Arena {
         return healthPoints;
     }
 
+
     /**
      * Sets the current health points of the character.
      *
