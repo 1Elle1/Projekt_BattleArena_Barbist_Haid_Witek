@@ -3,19 +3,28 @@ package htl;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
-public  class Dragon extends CharackterTyps{
+public class Dragon extends CharackterTyps{
 	
 	private int attackValue;
 	private int specialAbilityProbability;
+
 	private int healthpointsDragon;
 	
 
 	public Dragon(String name) {
 		super(name);
 		
-	}
+	} 
 	
-	public int getAttackValue() {
+	public int getHealthpointsDragon() {
+		return  healthpointsDragon;
+	}
+
+	public void setHealthpointsDragon(int healthpointsDragon) {
+		this.healthpointsDragon = healthpointsDragon;
+	}
+
+	public int getAttackValue() { 
 		return attackValue;
 	}
 
@@ -45,17 +54,11 @@ public  class Dragon extends CharackterTyps{
 	}
 
 	
-	//khiuhiudiuqhdiuhiuhdiu
+	
 
 	
 	
-	public void DragonFlyOn() {
-		activateSpecialSkill();
-			}
 	
-	public void DragonFlyOff() {
-		deactivateSpecialSkill();
-			}
 	
 	public void calculateAttackValue() {
 		this.attackValue = ThreadLocalRandom.current().nextInt(20, 25 + 1);
@@ -86,8 +89,6 @@ public  class Dragon extends CharackterTyps{
 		    
 		    return false;
 		}
-		
-		
 		
 
 		

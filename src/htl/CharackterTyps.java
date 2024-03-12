@@ -53,9 +53,7 @@ public abstract class CharackterTyps extends Arena {
         this.name = name;
     }
 
-    public void attackValueEnemy() {
-    	 return attackValueEnemy;
-    }
+    public abstract void calculateAttackValue();
     /**
      * Gets the current health points of the character.
      *
@@ -107,8 +105,12 @@ public abstract class CharackterTyps extends Arena {
      *
      * @param points The amount of damage points to be taken.
      */
-    public abstract void getDamage(int points);
-
+    public  void getDamage(int points) {
+    	this.healthPoints -= points;
+    	if ( this.healthPoints < 0) {
+    		this.healthPoints = 0;
+    	}
+    }
     /**
      * Activates the character's special ability, if not already active.
      */
