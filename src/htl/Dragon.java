@@ -59,6 +59,7 @@ public  class Dragon extends CharackterTyps{
 	
 	public void calculateAttackValue() {
 		this.attackValue = ThreadLocalRandom.current().nextInt(20, 25 + 1);
+	}	
 		
 
 		
