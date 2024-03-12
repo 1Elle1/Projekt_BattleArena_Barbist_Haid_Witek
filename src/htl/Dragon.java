@@ -92,7 +92,7 @@ public class Dragon extends CharackterTyps{
 
 		
 public  void attack(CharackterTyps enemy) {
-	enemy.getattackValue();
+	enemy.getDamage();
 
 }
 	public  void getDamage(int points) {
