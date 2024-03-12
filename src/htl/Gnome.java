@@ -62,7 +62,7 @@ public class Gnome extends CharackterTyps{
 			return true;
 		}else {
 			this.attackValue /= 2;
-			System.out.println("Die Zwergenkopfnuss hat nicht Funktioniert du machst diese Runde nur halb soviel Schaden");
+			System.out.println("Die Zwergenkopfnuss hat nicht Funktioniert du machst diese Runde nur halb soviel Schaden!");
 			return false;
 		}
 	}
@@ -95,7 +95,7 @@ public class Gnome extends CharackterTyps{
 			enemy.getDamage(attackValue);
 		}
 		else {
-			System.out.println("Spieler: " + enemy.getName() + " ist gestorben");
+			System.out.println("Spieler: " + enemy.getName() + " ist gestorben!");
 		}
 		
 		
