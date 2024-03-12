@@ -12,13 +12,6 @@ public class Gnome extends CharackterTyps{
 		
 	}
 	
-	public int getHealthPointsGnome() {
-		return healthPointsGnome;
-	}
-
-	public void setHealthPointsGnome(int healthPointsGnome) {
-		this.healthPointsGnome = healthPointsGnome;
-	}
 
 	public int getAttackValue() {
 		return attackValue;
@@ -98,7 +91,13 @@ public class Gnome extends CharackterTyps{
 	 
 
 	public void attack(CharackterTyps enemy) {
-		this.getHealthPoints() -= 
+		if(enemy.getHealthPoints() > 0) {
+			enemy.getDamage(attackValue);
+		}
+		else {
+			System.out.println("Spieler: " + enemy.getName() + " ist gestorben!");
+		}
+		
 		
 	}
 	
