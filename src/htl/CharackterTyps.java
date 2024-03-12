@@ -53,6 +53,9 @@ public abstract class CharackterTyps extends Arena {
         this.name = name;
     }
 
+    public void attackValueEnemy() {
+    	 return attackValueEnemy;
+    }
     /**
      * Gets the current health points of the character.
      *

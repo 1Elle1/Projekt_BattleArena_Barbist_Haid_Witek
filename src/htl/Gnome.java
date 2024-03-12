@@ -96,20 +96,20 @@ public class Gnome extends CharackterTyps{
 	    }
 	    return false;
 	    }
-	 //dvduq
+	 
 
 	public void attack(CharackterTyps enemy) {
-		
-		if ( isSpecialAbilityActive()) {
-			
-			
-		}
-		
+		this.getHealthPoints() -= 
 		
 	}
+	
+	
 	public void getDamage(int points) {
-		
-			
+		if(this.healthPointsGnome > 0 && this.healthPointsGnome > points) {
+			this.healthPointsGnome -= points;
+		}else {
+			this.healthPointsGnome = 0;
+		}
 	}
 	
 }

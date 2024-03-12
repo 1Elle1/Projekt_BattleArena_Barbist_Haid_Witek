@@ -3,26 +3,19 @@ package htl;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Dragon extends CharackterTyps{
+public  class Dragon extends CharackterTyps{
 	
 	private int attackValue;
 	private int specialAbilityProbability;
-	public  int healthpointsDragon;
+	private int healthpointsDragon;
+	
 
 	public Dragon(String name) {
 		super(name);
 		
-	} 
+	}
 	
-	public int getHealthpointsDragon() {
-		return  healthpointsDragon;
-	}
-
-	public void setHealthpointsDragon(int healthpointsDragon) {
-		this.healthpointsDragon = healthpointsDragon;
-	}
-
-	public int getAttackValue() { 
+	public int getAttackValue() {
 		return attackValue;
 	}
 
@@ -52,16 +45,22 @@ public class Dragon extends CharackterTyps{
 	}
 
 	
-	
+	//khiuhiudiuqhdiuhiuhdiu
 
 	
 	
+	public void DragonFlyOn() {
+		activateSpecialSkill();
+			}
 	
+	public void DragonFlyOff() {
+		deactivateSpecialSkill();
+			}
 	
 	public void calculateAttackValue() {
 		this.attackValue = ThreadLocalRandom.current().nextInt(20, 25 + 1);
-	}	
 		
+
 		
 		public boolean fly() {
 			
@@ -91,11 +90,14 @@ public class Dragon extends CharackterTyps{
 		
 
 		
-public  void attack(CharackterTyps enemy) {
-	enemy.getDamage();
+	@Override
+	public void attack(CharackterTyps enemy) {
+		// TODO Auto-generated method stub
+		
+	}
 
-}
-	public  void getDamage(int points) {
-		enemy.get
-	}
-	}
+	@Override
+	public void getDamage(int points) {
+		// TODO Auto-generated method stub
+		
+	}}
