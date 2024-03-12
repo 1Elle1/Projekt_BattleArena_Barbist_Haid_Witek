@@ -7,7 +7,9 @@ public class Dragon extends CharackterTyps{
 	
 	private int attackValue;
 	private int specialAbilityProbability;
-	public  int healthpointsDragon;
+
+	private int healthpointsDragon;
+	
 
 	public Dragon(String name) {
 		super(name);
@@ -62,6 +64,7 @@ public class Dragon extends CharackterTyps{
 		this.attackValue = ThreadLocalRandom.current().nextInt(20, 25 + 1);
 	}	
 		
+
 		
 		public boolean fly() {
 			
@@ -88,6 +91,7 @@ public class Dragon extends CharackterTyps{
 		}
 		
 
+		
 	@Override
 	public void attack(CharackterTyps enemy) {
 		// TODO Auto-generated method stub
