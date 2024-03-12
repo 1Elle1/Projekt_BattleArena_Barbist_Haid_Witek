@@ -95,7 +95,7 @@ public class Gnome extends CharackterTyps{
 			enemy.getDamage(attackValue);
 		}
 		else {
-			System.out.println("Spieler: " + enemy.getName() + " ist gestorben!");
+			System.out.println("Spieler: " + enemy.getName() + " ist gestorben");
 		}
 		
 		
