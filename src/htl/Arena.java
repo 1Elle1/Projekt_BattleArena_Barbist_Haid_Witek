@@ -22,28 +22,34 @@ public class Arena{
 	public void playerSelection() {
 		int temp = 0;
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Welche Charakter möchten sie spielen bitte geben sie den namen in die Komandozeile Player1:");
+		boolean validInput = false;
+		
+		while(!validInput) {
+		System.out.println("Zurzeit stehen 'Gnome' und 'Dragon' als Charaktere zur Verfügung!");
+		System.out.println();
+		System.out.println("Welche Charakter möchten sie spielen Player1:");
 		String p1InputCharakter = sc.nextLine();
+		
 		if((!p1InputCharakter.equalsIgnoreCase("Gnome")) && (!p1InputCharakter.equalsIgnoreCase("Dragon"))) {
 			System.out.println("Falsche Eingabe, bitte Dragon oder Gnome eingeben!");
-			System.out.println();
-			playerSelection();
 		}else {
 			System.out.println("Wie soll der " + p1InputCharakter + " heißen?");
 			String p1InputName = sc.nextLine();
-			if(p1InputCharakter.equals("Gnome")) {
+			if(p1InputCharakter.equalsIgnoreCase("Gnome")) {
 				p1 = new Gnome(p1InputName);
 				System.out.println("Player1 ist der Gnome names: " + p1InputName);
 				temp = 1;
-			}else if(p1InputCharakter.equals("Dragon")) {
+			}else if(p1InputCharakter.equalsIgnoreCase("Dragon")) {
 				p1 = new Dragon(p1InputName);
 				System.out.println("Player1 ist der Dragon names: " + p1InputName);
 				temp = 2;
 			}else {
 				System.out.println("Falsche Eingabe!");
 			}
+			validInput = true;
 		}
 		
+	}
 		
 		if(temp == 1) {
 			System.out.println("Player2 du bist der Drache, wie soll er heißen?");
