@@ -8,14 +8,24 @@ public class Arena{
 	CharackterTyps p1;
 	CharackterTyps p2;
 	
-	public static int pickBeginner() {
+	private int beginner;
+	
+	public int getBeginner() {
+		return beginner;
+	}
+
+	public void setBeginner(int beginner) {
+		this.beginner = beginner;
+	}
+
+	public void pickBeginner() {
 		int numberOfRandomNumber = ThreadLocalRandom.current().nextInt(0, 1 + 1);
 		if(numberOfRandomNumber == 0) {
 			System.out.println("Player 1, du fängst an!");
-			return 1;
+			this.setBeginner(1);;
 		}else {
 			System.out.println("Player 2, du fängst an!");
-			return 2;
+			this.setBeginner(2);
 		}
 	}
 	
@@ -68,11 +78,36 @@ public class Arena{
 	}
 	
 	
+	public void simulateCombat(CharackterTyps attacker, CharackterTyps victim) {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Du bist am zug " + attacker.getName() + ", was möchtest du machen? Wähle 1 oder 2");
+		attacker.outputOfTheAbilities();
+		int attackerInput = sc.nextInt();
+		
+		
+		
+		
+	}
+	
+	public void fight() {
+		int roundNumber = 0;
+		boolean winnerOfTheGame = false;
+		 pickBeginner();
+		 while(!winnerOfTheGame) {
+			 
+		 }
+	}
+	
+	
+	
 	
 	
 	public static void main(String[] args) {
 		 Arena arena = new Arena();
-		 arena.playerSelection();  
+		 arena.playerSelection();
+		 
+		 
 		
 		
 	}
