@@ -91,7 +91,7 @@ public class Gnome extends CharackterTyps{
 	 
 
 	public void attack(CharackterTyps enemy) {
-		if(enemy.getHealthPoints() > 0) {
+		if(enemy.getHealthPoints() > attackValue && enemy.getHealthPoints() > 0) {
 			enemy.getDamage(attackValue);
 		}
 		else {
@@ -99,6 +99,11 @@ public class Gnome extends CharackterTyps{
 		}
 		
 		
+	}
+	
+	public void outputOfTheAbilities() {
+		System.out.println("1. Angreifen \n"
+						 + "2. Zergenkopfnuss aktivieren");
 	}
 	
 	
