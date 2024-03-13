@@ -128,5 +128,7 @@ public abstract class CharackterTyps extends Arena {
             this.specialAbilityActive = false;
         }
     }
+    
+    public abstract void outputOfTheAbilities();
 
 }
