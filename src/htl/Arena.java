@@ -5,8 +5,10 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Arena{
 	
-	CharackterTyps p1;
-	CharackterTyps p2;
+	static CharackterTyps p1;
+	static CharackterTyps p2;
+	
+	Scanner sc = new Scanner(System.in);
 	
 	private int beginner;
 	
@@ -31,7 +33,6 @@ public class Arena{
 	
 	public void playerSelection() {
 		int temp = 0;
-		Scanner sc = new Scanner(System.in);
 		boolean validInput = false;
 		
 		while(!validInput) {
@@ -74,19 +75,37 @@ public class Arena{
 		}
 		
 		
-		sc.close();
 	}
 	
 	
+	
+	
 	public void simulateCombat(CharackterTyps attacker, CharackterTyps victim) {
-		Scanner sc = new Scanner(System.in);
-
-		System.out.println("Du bist am zug " + attacker.getName() + ", was möchtest du machen? Wähle 1 oder 2");
+		
+		System.out.println();
+		System.out.println("Du bist am zug " + attacker.getName() + ", was möchtest du machen? Tippe 1,2 oder 3");
 		attacker.outputOfTheAbilities();
 		int attackerInput = sc.nextInt();
 		
 		
-		
+		switch (attackerInput) {
+			case 1: 
+				if(victim.getHealthPoints() > attacker.calculateAttackValue()) {
+					attacker.attack(victim);
+					System.out.println("Du hast " + victim.getName() + "angegriffen! Er hat noch " + victim.getHealthPoints() + " Leben");
+				}else {
+					System.out.println("Du hast Verloren" + victim.getName() + "\n"
+							+ attacker.getName() + " du hast gewonnen!");
+				}
+				break;
+			case 2:
+				if(!attacker.isSpecialAbilityActive()) {
+					attacker.activateSpecialSkill();
+					System.out.println(attacker.getName());
+				}
+			
+			
+		}
 		
 	}
 	
@@ -106,6 +125,7 @@ public class Arena{
 	public static void main(String[] args) {
 		 Arena arena = new Arena();
 		 arena.playerSelection();
+		 arena.simulateCombat(p1, p2);
 		 
 		 
 		
