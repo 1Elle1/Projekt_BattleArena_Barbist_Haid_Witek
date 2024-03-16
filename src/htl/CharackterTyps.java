@@ -22,7 +22,8 @@ public abstract class CharackterTyps extends Arena {
      * Whether the character's special ability is currently active.
      */
     private boolean specialAbilityActive;
-
+    
+ 
     /**
      * Creates a new character type with the given name.
      *
@@ -53,7 +54,7 @@ public abstract class CharackterTyps extends Arena {
         this.name = name;
     }
 
-    public abstract void calculateAttackValue();
+    public abstract int calculateAttackValue();
     /**
      * Gets the current health points of the character.
      *
@@ -130,5 +131,6 @@ public abstract class CharackterTyps extends Arena {
     }
     
     public abstract void outputOfTheAbilities();
+    
 
 }
