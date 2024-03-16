@@ -36,8 +36,8 @@ public class Gnome extends CharackterTyps{
 	 * The attack value is determined by generating a random integer 
 	 * between 15 and 25 (inclusive).
 	 */
-	public void calculateAttackValue() {
-		this.setAttackValue(ThreadLocalRandom.current().nextInt(15, 25 + 1));
+	public int calculateAttackValue() {
+		return ThreadLocalRandom.current().nextInt(15, 25 + 1);
 	}
 	
 	
@@ -103,7 +103,8 @@ public class Gnome extends CharackterTyps{
 	
 	public void outputOfTheAbilities() {
 		System.out.println("1. Angreifen \n"
-						 + "2. Zergenkopfnuss aktivieren");
+						 + "2. Zergenkopfnuss aktivieren \n"
+						 + "3. Zwergenkopfnuss deaktivieren");
 	}
 	
 	
