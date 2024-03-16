@@ -4,7 +4,6 @@
  */
 package htl;
 
-import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Dragon extends CharackterTyps {
@@ -90,9 +89,10 @@ public class Dragon extends CharackterTyps {
 
     /**
      * Calculates the attack value of the dragon.
+     * @return 
      */
-    public void calculateAttackValue() {
-        this.attackValue = ThreadLocalRandom.current().nextInt(20, 25 + 1);
+    public int calculateAttackValue() {
+        return ThreadLocalRandom.current().nextInt(20, 25 + 1);
     }
 
     /**
@@ -140,4 +140,13 @@ public class Dragon extends CharackterTyps {
             System.out.println("Spieler: " + enemy.getName() + " ist gestorben!");
         }
     }
+    
+    public void outputOfTheAbilities() {
+		System.out.println("1. Angreifen \n"
+						 + "2. Fliegen aktivieren \n"
+						 + "3. Fliegen deaktivieren");
+	}
+	
+    
+    
 }
