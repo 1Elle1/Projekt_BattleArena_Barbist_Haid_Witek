@@ -1,9 +1,14 @@
 package htl;
 
 public class App {
+	CharackterTyps p1;
+    CharackterTyps p2;
+    
+    
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Arena arena = new Arena();
+		arena.fight();
 
 	}
 
