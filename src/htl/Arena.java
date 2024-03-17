@@ -85,7 +85,7 @@ public class Arena{
 			return;
 		}
 		System.out.println();
-		System.out.println("Du bist am zug " + attacker.getName() + " du hast noch " + attacker.getHealthPoints() +  ", was möchtest du machen? Tippe 1,2 oder 3");
+		System.out.println("Du bist am zug " + attacker.getName() + " du hast noch " + attacker.getHealthPoints() +  " Leben, was möchtest du machen? Tippe 1,2 oder 3");
 		attacker.outputOfTheAbilities();
 		int attackerInput = sc.nextInt();
 		
