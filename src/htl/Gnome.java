@@ -91,14 +91,15 @@ public class Gnome extends CharackterTyps{
 	 
 
 	public void attack(CharackterTyps enemy) {
-		if(enemy.getHealthPoints() > attackValue && enemy.getHealthPoints() > 0) {
-			enemy.getDamage(attackValue);
-		}
-		else {
-			System.out.println("Spieler: " + enemy.getName() + " ist gestorben!");
-		}
-		
-		
+		if(this.isSpecialAbilityActive()) {
+			dwarfHeadNut();
+			}else if(enemy.getHealthPoints() > attackValue && enemy.getHealthPoints() > 0) {
+				enemy.getDamage(attackValue);
+			}
+			else {
+				System.out.println("Spieler: " + enemy.getName() + " ist gestorben!");
+			}
+				
 	}
 	
 	public void outputOfTheAbilities() {
