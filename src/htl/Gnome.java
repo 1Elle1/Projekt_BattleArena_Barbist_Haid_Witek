@@ -41,6 +41,17 @@ public class Gnome extends CharackterTyps{
 	}
 	
 	
+	public void activateSpecialSkill() {
+	    if (this.getHealthPoints() < 50) {
+	        super.activateSpecialSkill(); 
+	        System.out.println("Spezialfähigkeit des Gnoms wurde aktiviert, da die Lebenspunkte unter 50 sind.");
+	    } else {
+	        System.out.println("Die Spezialfähigkeit des Gnoms kann nicht aktiviert werden, da die Lebenspunkte 50 oder mehr betragen.");
+	        this.setSpecialAbilityActive(false);
+	    }
+	}
+	
+	
 	
 	/**
 	 * Executes the DwarfHeadNutt special ability. If active and successful, 
@@ -50,6 +61,11 @@ public class Gnome extends CharackterTyps{
 	 * @return true if the ability was successfully activated, false otherwise.
 	 */
 	public boolean dwarfHeadNut() {
+		
+		if (this.getHealthPoints() > 50) {
+	        System.out.println("Du hast zu viele Lebenspunkte, um die Zwergenkopfnuss zu aktivieren!");
+	        return false;
+	    }
 		
 		if (!this.isSpecialAbilityActive()) {
 			
@@ -101,6 +117,8 @@ public class Gnome extends CharackterTyps{
 			}
 				
 	}
+	
+	
 	
 	public void outputOfTheAbilities() {
 		System.out.println("1. Angreifen \n"
