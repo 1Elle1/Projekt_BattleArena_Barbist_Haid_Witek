@@ -81,7 +81,6 @@ public class Arena{
 	
 	
 	public void simulateCombat(CharackterTyps attacker, CharackterTyps victim) {
-		
 		System.out.println();
 		System.out.println("Du bist am zug " + attacker.getName() + ", was möchtest du machen? Tippe 1,2 oder 3");
 		attacker.outputOfTheAbilities();
@@ -92,17 +91,31 @@ public class Arena{
 			case 1: 
 				if(victim.getHealthPoints() > attacker.calculateAttackValue()) {
 					attacker.attack(victim);
-					System.out.println("Du hast " + victim.getName() + "angegriffen! Er hat noch " + victim.getHealthPoints() + " Leben");
+					System.out.println("Du hast " + victim.getName() + " angegriffen! Er hat noch " + victim.getHealthPoints() + " Leben");
 				}else {
-					System.out.println("Du hast Verloren" + victim.getName() + "\n"
+					System.out.println(victim.getName() +" Du hast Verloren " + "\n"
 							+ attacker.getName() + " du hast gewonnen!");
+					attacker.setWinnerOfTheGame(true);
 				}
 				break;
 			case 2:
 				if(!attacker.isSpecialAbilityActive()) {
 					attacker.activateSpecialSkill();
-					System.out.println(attacker.getName());
+					System.out.println(attacker.getName()+ " hat die Spezialfähigkeit aktiviert!");
+				}else {
+					System.out.println("Die Spezialfähigkeit wurde wurde schon aktiviert!");
+					simulateCombat(attacker, victim);
 				}
+				break;
+			case 3: 
+				if(attacker.isSpecialAbilityActive()) {
+					attacker.deactivateSpecialSkill();
+					System.out.println(attacker.getName() + " deine Spezialfähigkeit wurde deaktiviert!");
+				}else {
+					System.out.println("Die Spezialfähigkeit ist nicht aktiviert!");
+					simulateCombat(attacker, victim);
+				}
+				break;
 			
 			
 		}
@@ -111,26 +124,34 @@ public class Arena{
 	
 	public void fight() {
 		int roundNumber = 0;
-		boolean winnerOfTheGame = false;
+		
+		 playerSelection();
 		 pickBeginner();
-		 while(!winnerOfTheGame) {
+		 
+		 switch (this.getBeginner()) {
+		 case 1:
+			 while(!p1.isWinnerOfTheGame() || !p2.isWinnerOfTheGame()) {
+				 simulateCombat(p1, p2);
+				 simulateCombat(p2, p1);
+				 roundNumber++;
+			 }
 			 
+			 break;
+		 case 2: 
+			 while(!p1.isWinnerOfTheGame() || !p2.isWinnerOfTheGame()) {
+				 simulateCombat(p2, p1);
+				 simulateCombat(p1, p2);
+				 roundNumber ++;
+			 }
+		     break;
 		 }
-	}
-	
-	
-	
-	
-	
-	public static void main(String[] args) {
-		 Arena arena = new Arena();
-		 arena.playerSelection();
-		 arena.simulateCombat(p1, p2);
 		 
-		 
-		
-		
 	}
+		
+			 
+			 
+			
+	
 	
 	
 
