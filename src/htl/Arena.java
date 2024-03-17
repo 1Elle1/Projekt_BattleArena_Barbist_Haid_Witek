@@ -81,8 +81,11 @@ public class Arena{
 	
 	
 	public void simulateCombat(CharackterTyps attacker, CharackterTyps victim) {
+		if(p1.isWinnerOfTheGame() || p2.isWinnerOfTheGame()) {
+			return;
+		}
 		System.out.println();
-		System.out.println("Du bist am zug " + attacker.getName() + ", was möchtest du machen? Tippe 1,2 oder 3");
+		System.out.println("Du bist am zug " + attacker.getName() + " du hast noch " + attacker.getHealthPoints() +  ", was möchtest du machen? Tippe 1,2 oder 3");
 		attacker.outputOfTheAbilities();
 		int attackerInput = sc.nextInt();
 		
@@ -101,11 +104,15 @@ public class Arena{
 			case 2:
 				if(!attacker.isSpecialAbilityActive()) {
 					attacker.activateSpecialSkill();
-					System.out.println(attacker.getName()+ " hat die Spezialfähigkeit aktiviert!");
+					if(attacker.isSpecialAbilityActive()) {
+						System.out.println(attacker.getName()+ " hat die Spezialfähigkeit aktiviert!");
+					}
+					
 				}else {
 					System.out.println("Die Spezialfähigkeit wurde wurde schon aktiviert!");
 					simulateCombat(attacker, victim);
 				}
+				
 				break;
 			case 3: 
 				if(attacker.isSpecialAbilityActive()) {
@@ -123,7 +130,6 @@ public class Arena{
 	}
 	
 	public void fight() {
-		int roundNumber = 0;
 		
 		 playerSelection();
 		 pickBeginner();
@@ -133,7 +139,6 @@ public class Arena{
 			 while(!p1.isWinnerOfTheGame() || !p2.isWinnerOfTheGame()) {
 				 simulateCombat(p1, p2);
 				 simulateCombat(p2, p1);
-				 roundNumber++;
 			 }
 			 
 			 break;
@@ -141,7 +146,6 @@ public class Arena{
 			 while(!p1.isWinnerOfTheGame() || !p2.isWinnerOfTheGame()) {
 				 simulateCombat(p2, p1);
 				 simulateCombat(p1, p2);
-				 roundNumber ++;
 			 }
 		     break;
 		 }
