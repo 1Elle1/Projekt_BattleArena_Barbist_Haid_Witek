@@ -20,6 +20,13 @@ public class Arena{
 		this.beginner = beginner;
 	}
 
+	
+	/**
+	 * Randomly selects which player (1 or 2) will begin the game.
+	 * This is determined by generating a random number (0 or 1).
+	 * If the random number is 0, Player 1 begins; otherwise, Player 2 begins.
+	 * The selected player is then set as the beginner using the {@code setBeginner} method.
+	 */
 	public void pickBeginner() {
 		int numberOfRandomNumber = ThreadLocalRandom.current().nextInt(0, 1 + 1);
 		if(numberOfRandomNumber == 0) {
@@ -31,6 +38,12 @@ public class Arena{
 		}
 	}
 	
+	
+	/**
+	 * Initiates character selection for two players. Player1 chooses between 'Gnome' and 'Dragon'. 
+	 * Player2 is automatically assigned the other character. Both players name their characters.
+	 * The method ensures valid input and prompts for re-entry if necessary.
+	 */
 	public void playerSelection() {
 		int temp = 0;
 		boolean validInput = false;
@@ -79,7 +92,18 @@ public class Arena{
 	
 	
 	
-	
+	/**
+	 * Simulates a combat round between two characters.
+	 * The method checks if either player has won or if either character is already defeated.
+	 * If not, it displays current health and options for the attacking player: attack, activate special ability, or deactivate special ability.
+	 * The attack option deals damage to the victim, and the game may end if the victim's health drops to 0 or below.
+	 * Special ability options can only be activated or deactivated if not already in that state.
+	 * This method manages combat logic and displays outcomes including a victory message for the winner.
+	 *
+	 * @param attacker The character initiating the attack this round.
+	 * @param victim The character receiving the attack this round.
+	 */
+
 	public void simulateCombat(CharackterTyps attacker, CharackterTyps victim) {
 		if(p1.isWinnerOfTheGame() || p2.isWinnerOfTheGame() || attacker.getHealthPoints() <= 0 || victim.getHealthPoints() <= 0) {
 			return;
@@ -147,6 +171,13 @@ public class Arena{
 		
 	}
 	
+	
+	/**
+	 * Initiates the fighting sequence between two characters after selecting them and determining the first attacker.
+	 * The fight continues in rounds, where each player gets a turn to attack, until one becomes the winner.
+	 * The sequence alternates between the two players, starting with the determined beginner.
+	 * The combat loop checks for a winner after each round to potentially end the fight.
+	 */
 	public void fight() {
 		
 		 playerSelection();
