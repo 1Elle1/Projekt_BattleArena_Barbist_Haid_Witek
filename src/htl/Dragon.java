@@ -7,7 +7,7 @@ public class Dragon extends CharackterTyps {
 
     private int attackValue; 
     private int specialAbilityProbability; 
-    private int healthpointsDragon; 
+ 
 
     
     public Dragon(String name) {
@@ -16,15 +16,6 @@ public class Dragon extends CharackterTyps {
     }
 
    
-    public int getHealthpointsDragon() {
-        return healthpointsDragon;
-    }
-
-   
-    public void setHealthpointsDragon(int healthpointsDragon) {
-        this.healthpointsDragon = healthpointsDragon;
-    }
-
     
     public int getAttackValue() {
         return attackValue;
@@ -73,8 +64,8 @@ public class Dragon extends CharackterTyps {
         }
 
         if (this.isSpecialAbilitySuccessful()) {
-            this.healthpointsDragon += 10;
-            System.out.println("Der Drache ist erfolgreich abgehoben und hat 10 zusätzliche Lebenspunkte.");
+            this.setHealthPoints(this.getHealthPoints()+ 10) ;
+            System.out.println("Der Drache ist erfolgreich abgehoben und hat 10 zusätzliche Lebenspunkte und macht nur noch 5 oder 10 schaden.");
             return true;
         } else {
             return false;
@@ -111,15 +102,25 @@ public class Dragon extends CharackterTyps {
 
 		if(this.isSpecialAbilityActive()) {
 			boolean success = fly(); 
-			temporaryAttackValue = success ? getHealthPoints() + 10 :0;
-			System.out.println("Du hast in dieser Runde mit der Spezialfaehigkeit " + temporaryAttackValue + " Schaden gemacht!");
+			
+			if(success) {
+				this.setHealthPoints(this.getHealthPoints()+10);
+					temporaryAttackValue = success ? temporaryAttackValue  : temporaryAttackValue ;
+			       
+			        System.out.println("Du hast in dieser Runde mit der Spezialfaehigkeit 10 Leben hinzubekommen und machst nur noch 5 oder 10 schaden " + temporaryAttackValue + " Schaden gemacht!");
+			    }  else {
+			      System.out.println("Der Drache ist nicht abgehoben");
+			    }
+				
+			
+			
 		}
 		
 		enemy.getDamage(temporaryAttackValue);
 		
 		if (enemy.getHealthPoints() <= 0) { 
 	        System.out.println("Spieler: " + enemy.getName() + " ist gestorben!");
-	        
+	        this.setWinnerOfTheGame(true);
 	    }
     	}
     
