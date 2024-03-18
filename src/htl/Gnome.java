@@ -72,12 +72,14 @@ public class Gnome extends CharackterTyps{
 	        return false;
 	    }
 		
+		//int temporaryAttackValue = this.getAttackValue();
+		
 		if(this.isSpecialAbilitySuccessful()) {
-			this.setAttackValue(attackValue *= 2);
+			//this.setAttackValue(temporaryAttackValue *= 2);
 			System.out.println("Die Zwergenkopfnuss war erfolgreich, du machst jetzt in dieser Runde doppelt so viel schaden!");
 			return true;
 		}else {
-			this.setAttackValue(attackValue /= 2);
+			//this.setAttackValue(temporaryAttackValue /= 2);
 			System.out.println("Die Zwergenkopfnuss hat nicht Funktioniert du machst diese Runde nur halb soviel Schaden");
 			return false;
 		}
@@ -93,8 +95,7 @@ public class Gnome extends CharackterTyps{
 	 */
 	 private boolean isSpecialAbilitySuccessful() {
 	    int numberOfRandomNumber = ThreadLocalRandom.current().nextInt(0, 10 + 1);
-	    System.out.println(numberOfRandomNumber);
-	        
+	    
 	    if (this.getHealthPoints() <= 50 && numberOfRandomNumber <= 3) {
 	       return true;
 	    } else if (this.getHealthPoints() <= 20 && numberOfRandomNumber <= 5) {
@@ -125,6 +126,7 @@ public class Gnome extends CharackterTyps{
 			
 		if (enemy.getHealthPoints() <= 0) {
 	        System.out.println("Spieler: " + enemy.getName() + " ist gestorben!");
+	        
 	    }
 				
 	}

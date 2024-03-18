@@ -135,6 +135,7 @@ public class Dragon extends CharackterTyps {
      */
     @Override
     public void attack(CharackterTyps enemy) {
+    	
         if (enemy.getHealthPoints() > 0) {
             enemy.getDamage(attackValue);
         } else {

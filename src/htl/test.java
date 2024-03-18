@@ -2,11 +2,16 @@ package htl;
 
 public class test {
 	
-	Gnome gnome = new Gnome("g1");
+	
 	
 	public static void main(String[] args) {
-		System.out.println();
 
+		Gnome g = new Gnome("Gnomos1");
+		Dragon d = new Dragon("Dragonos");
+		Arena a = new Arena();
+		
+		a.printStats(g, d);
+		
 	}
 	
 	
