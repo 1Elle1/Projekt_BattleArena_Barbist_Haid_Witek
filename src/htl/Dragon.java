@@ -62,28 +62,12 @@ public class Dragon extends CharackterTyps {
             this.attackValue = ThreadLocalRandom.current().nextInt(5, 10 + 1);
             return false;
         }
-
-        if (this.isSpecialAbilitySuccessful()) {
-            this.setHealthPoints(this.getHealthPoints()+ 10) ;
-            System.out.println("Der Drache ist erfolgreich abgehoben und hat 10 zusätzliche Lebenspunkte und macht nur noch 5 oder 10 schaden.");
-            return true;
-        } else {
-            return false;
-        }
+        return true;
     }
+       
 
-    /**
-     * Checks if the dragon's special ability is successful.
-     * 
-     * @return True if the special ability is successful, otherwise false.
-     */
-    private boolean isSpecialAbilitySuccessful() {
-        int numberOfRandomNumber = ThreadLocalRandom.current().nextInt(5, 10 + 1);
-        System.out.println(numberOfRandomNumber);
-
-        return false;
-    }
-
+    
+  
     /**
      * Overrides the attack method to implement the dragon's attack behavior.
      * 
@@ -105,9 +89,11 @@ public class Dragon extends CharackterTyps {
 			
 			if(success) {
 				this.setHealthPoints(this.getHealthPoints()+10);
-					temporaryAttackValue = success ? temporaryAttackValue  : temporaryAttackValue ;
+					int tmp = ThreadLocalRandom.current().nextInt(5, 10 + 1);
+					temporaryAttackValue -= tmp;
+					
 			       
-			        System.out.println("Du hast in dieser Runde mit der Spezialfaehigkeit 10 Leben hinzubekommen und machst nur noch 5 oder 10 schaden " + temporaryAttackValue + " Schaden gemacht!");
+			        System.out.println("Du hast in dieser Runde mit der Spezialfaehigkeit 10 Leben hinzubekommen und machst nun " + tmp + " schaden weniger ");
 			    }  else {
 			      System.out.println("Der Drache ist nicht abgehoben");
 			    }
