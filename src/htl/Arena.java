@@ -91,6 +91,40 @@ public class Arena{
 	}
 	
 	
+	public void printStats(CharackterTyps attacker, CharackterTyps victim) {
+		System.out.println("Du bist am Zug " + attacker.getName() +"\n"
+						+ "Du hast " + attacker.getHealthPoints() +  " Leben");
+		if(attacker.isSpecialAbilityActive()) {
+			System.out.println("Deine Spezielfähigkeit ist Aktiv");
+		}else {
+			System.out.println("Deine Spezielfähigkeit ist nicht Aktiv");
+		}
+		System.out.println("Dein Gegner hat noch " + victim.getHealthPoints() + " Leben \n");
+		System.out.println("Wie möchtest du fortfahren? Tippe 1,2 oder 3");
+	
+	}
+	
+	public void printWinnerAndLooser(CharackterTyps attacker, CharackterTyps victim) {
+		System.out.println(victim.getName() +" Du hast Verloren " + "\n"
+				+ attacker.getName() + " du hast Gewonnen!");
+		attacker.setWinnerOfTheGame(true);
+		System.out.println(
+			    "       __________\n" +
+			    "      '._==_==_=_.'\n" +
+			    "      .-\\:      /-.\n" +
+			    "     | (|:     |) |\n" +
+			    "      '-|:     |-'\n" +
+			    "        \\:.    /\n" +
+			    "         \\:  . /\n" +
+			    "          \\:  /\n" +
+			    "           \\/\n" +
+			    "         _.' '._\n" +
+			    "        `\"\"\"\"\"\"\"`\n"+
+			    "          "+ attacker.getName()
+			    
+			);
+	}
+	
 	
 	/**
 	 * Simulates a combat round between two characters.
@@ -109,8 +143,7 @@ public class Arena{
 			return;
 		}
 		System.out.println();
-		System.out.println("Du bist am zug " + attacker.getName() + " du hast noch " + attacker.getHealthPoints() +  " Leben, was möchtest du machen? Tippe 1,2 oder 3");
-		System.out.println("Dein Gegner hat noch " + victim.getHealthPoints() + " Leben");
+		printStats(attacker, victim);
 		attacker.outputOfTheAbilities();
 		int attackerInput = sc.nextInt();
 		
@@ -121,26 +154,7 @@ public class Arena{
 					attacker.attack(victim);
 					System.out.println("Du hast " + victim.getName() + " angegriffen! Er hat noch " + victim.getHealthPoints() + " Leben");
 				}else {
-					System.out.println(victim.getName() +" Du hast Verloren " + "\n"
-							+ attacker.getName() + " du hast Gewonnen!");
-					attacker.setWinnerOfTheGame(true);
-					System.out.println(
-						    "       __________\n" +
-						    "      '._==_==_=_.'\n" +
-						    "      .-\\:      /-.\n" +
-						    "     | (|:     |) |\n" +
-						    "      '-|:     |-'\n" +
-						    "        \\:.    /\n" +
-						    "         \\:  . /\n" +
-						    "          \\:  /\n" +
-						    "           \\/\n" +
-						    "         _.' '._\n" +
-						    "        `\"\"\"\"\"\"\"`\n"+
-						    "          "+ attacker.getName()
-						    
-						);
-
-
+					printWinnerAndLooser(attacker, victim);
 				}
 				break;
 			case 2:
