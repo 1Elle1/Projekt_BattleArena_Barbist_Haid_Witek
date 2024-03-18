@@ -107,21 +107,27 @@ public class Gnome extends CharackterTyps{
 	 
 
 	public void attack(CharackterTyps enemy) {
+		
+		if (enemy.getHealthPoints() <= 0) {
+	        System.out.println(enemy.getName() + " ist bereits gestorben und kann nicht angegriffen werden.");
+	        return;
+	    }
+		
 		int temporaryAttackValue = this.getAttackValue();
 		
 		if(this.isSpecialAbilityActive()) {
 			boolean success = dwarfHeadNut();
 			temporaryAttackValue = success ? temporaryAttackValue *2 : temporaryAttackValue /2;
-			
 			System.out.println("Du hast in dieser Runde mit der Spezialfähigkeit " + temporaryAttackValue + " Schaden gemacht!");
 		}
+		
+		enemy.getDamage(temporaryAttackValue);
 			
-		if(enemy.getHealthPoints() > temporaryAttackValue && enemy.getHealthPoints() > 0) {
-				enemy.getDamage(temporaryAttackValue);
-			}
-			else {
-				System.out.println("Spieler: " + enemy.getName() + " ist gestorben!");
-			}
+		if (enemy.getHealthPoints() <= 0) {
+	        System.out.println("Spieler: " + enemy.getName() + " ist gestorben!");
+	    } else {
+	        System.out.println("Du hast " + enemy.getName() + " angegriffen! Er hat jetzt " + enemy.getHealthPoints() + " Lebenspunkte.");
+	    }
 				
 	}
 	
