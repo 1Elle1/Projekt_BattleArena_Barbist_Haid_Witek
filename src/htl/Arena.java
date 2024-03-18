@@ -81,7 +81,7 @@ public class Arena{
 	
 	
 	public void simulateCombat(CharackterTyps attacker, CharackterTyps victim) {
-		if(p1.isWinnerOfTheGame() || p2.isWinnerOfTheGame()) {
+		if(p1.isWinnerOfTheGame() || p2.isWinnerOfTheGame() || attacker.getHealthPoints() <= 0 || victim.getHealthPoints() <= 0) {
 			return;
 		}
 		System.out.println();
@@ -98,7 +98,7 @@ public class Arena{
 					System.out.println("Du hast " + victim.getName() + " angegriffen! Er hat noch " + victim.getHealthPoints() + " Leben");
 				}else {
 					System.out.println(victim.getName() +" Du hast Verloren " + "\n"
-							+ attacker.getName() + " du hast gewonnen!");
+							+ attacker.getName() + " du hast Gewonnen!");
 					attacker.setWinnerOfTheGame(true);
 					System.out.println(
 						    "       __________\n" +
