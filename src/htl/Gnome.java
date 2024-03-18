@@ -126,7 +126,7 @@ public class Gnome extends CharackterTyps{
 			
 		if (enemy.getHealthPoints() <= 0) {
 	        System.out.println("Spieler: " + enemy.getName() + " ist gestorben!");
-	        
+	        this.setWinnerOfTheGame(true);
 	    }
 				
 	}
