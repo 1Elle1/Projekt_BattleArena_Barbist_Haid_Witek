@@ -5,8 +5,8 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Arena{
 	
-	static CharackterTyps p1;
-	static CharackterTyps p2;
+	CharackterTyps p1;
+	CharackterTyps p2;
 	
 	Scanner sc = new Scanner(System.in);
 	

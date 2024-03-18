@@ -72,14 +72,14 @@ public class Gnome extends CharackterTyps{
 	        return false;
 	    }
 		
-		//int temporaryAttackValue = this.getAttackValue();
+		
 		
 		if(this.isSpecialAbilitySuccessful()) {
-			//this.setAttackValue(temporaryAttackValue *= 2);
+			
 			System.out.println("Die Zwergenkopfnuss war erfolgreich, du machst jetzt in dieser Runde doppelt so viel schaden!");
 			return true;
 		}else {
-			//this.setAttackValue(temporaryAttackValue /= 2);
+			
 			System.out.println("Die Zwergenkopfnuss hat nicht Funktioniert du machst diese Runde nur halb soviel Schaden");
 			return false;
 		}
