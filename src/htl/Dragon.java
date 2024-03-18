@@ -117,7 +117,7 @@ public class Dragon extends CharackterTyps {
 		
 		enemy.getDamage(temporaryAttackValue);
 		
-		if (enemy.getHealthPoints() <= 0) {
+		if (enemy.getHealthPoints() <= 0) { 
 	        System.out.println("Spieler: " + enemy.getName() + " ist gestorben!");
 	        
 	    }
