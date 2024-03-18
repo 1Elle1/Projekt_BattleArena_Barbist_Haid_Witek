@@ -1,4 +1,3 @@
-
 package htl;
 
 import java.util.concurrent.ThreadLocalRandom;
@@ -7,8 +6,6 @@ public class Dragon extends CharackterTyps {
 
     private int attackValue; 
     private int specialAbilityProbability; 
-    private boolean onceAttack = true;
-    private boolean wasSpecialAbilityActive = false;
  
 
     
@@ -78,7 +75,6 @@ public class Dragon extends CharackterTyps {
     @Override
     public void attack(CharackterTyps enemy) {
     	
-    	
     	if (enemy.getHealthPoints() <= 0) {
 	        System.out.println(enemy.getName() + " ist bereits gestorben und kann nicht angegriffen werden.");
 	        return;
@@ -91,14 +87,8 @@ public class Dragon extends CharackterTyps {
 			boolean success = fly(); 
 			
 			if(success) {
-				int tmp = ThreadLocalRandom.current().nextInt(5, 10 + 1);
-				
-				if(!wasSpecialAbilityActive) {
-					this.setHealthPoints(this.getHealthPoints()+10);
-					onceAttack = false;
-				}
-				
-					
+				this.setHealthPoints(this.getHealthPoints()+10);
+					int tmp = ThreadLocalRandom.current().nextInt(5, 10 + 1);
 					temporaryAttackValue -= tmp;
 					
 			       
@@ -107,12 +97,10 @@ public class Dragon extends CharackterTyps {
 			    }  else {
 			      System.out.println("Der Drache ist nicht abgehoben");
 			    }
+				
 			
-		}else {
-			onceAttack = true;
+			
 		}
-		
-		wasSpecialAbilityActive = this.isSpecialAbilityActive();
 		
 		enemy.getDamage(temporaryAttackValue);
 		
@@ -131,4 +119,4 @@ public class Dragon extends CharackterTyps {
 	
     
     
-}
+} 

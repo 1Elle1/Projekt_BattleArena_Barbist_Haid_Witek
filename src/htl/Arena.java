@@ -202,7 +202,7 @@ public class Arena{
 			
 		}
 		
-	}
+	} 
 	
 	
 	/**

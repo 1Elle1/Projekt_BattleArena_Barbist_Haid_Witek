@@ -143,3 +143,4 @@ public class Gnome extends CharackterTyps{
 	
 	
 }
+ 

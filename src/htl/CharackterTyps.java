@@ -106,4 +106,4 @@ public abstract class CharackterTyps extends Arena {
     public abstract void outputOfTheAbilities();
     
 
-}
+} 
