@@ -110,7 +110,7 @@ public class Dragon extends CharackterTyps {
     	
 
 		if(this.isSpecialAbilityActive()) {
-			boolean success = fly();
+			boolean success = fly(); 
 			temporaryAttackValue = success ? getHealthPoints() + 10 :0;
 			System.out.println("Du hast in dieser Runde mit der Spezialfaehigkeit " + temporaryAttackValue + " Schaden gemacht!");
 		}
