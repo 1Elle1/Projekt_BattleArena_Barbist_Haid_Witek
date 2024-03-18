@@ -154,7 +154,26 @@ public class Arena{
 					attacker.attack(victim);
 					System.out.println("Du hast " + victim.getName() + " angegriffen! Er hat noch " + victim.getHealthPoints() + " Leben");
 				}else {
-					printWinnerAndLooser(attacker, victim);
+					System.out.println(victim.getName() +" Du hast Verloren " + "\n"
+							+ attacker.getName() + " du hast Gewonnen!");
+					attacker.setWinnerOfTheGame(true);
+					System.out.println(
+						    "       __________\n" +
+						    "      '._==_==_=_.'\n" +
+						    "      .-\\:      /-.\n" +
+						    "     | (|:     |) |\n" +
+						    "      '-|:     |-'\n" +
+						    "        \\:.    /\n" +
+						    "         \\:  . /\n" +
+						    "          \\:  /\n" +
+						    "           \\/\n" +
+						    "         _.' '._\n" +
+						    "        `\"\"\"\"\"\"\"`\n"+
+						    "          "+ attacker.getName()
+						    
+						);
+
+
 				}
 				break;
 			case 2:
