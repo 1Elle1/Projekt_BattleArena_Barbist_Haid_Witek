@@ -10,7 +10,6 @@ public class App {
 		Arena arena = new Arena();
 		arena.fight();
 
-	} 
+	}
 
 }
- 
