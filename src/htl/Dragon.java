@@ -94,6 +94,7 @@ public class Dragon extends CharackterTyps {
 					
 			       
 			        System.out.println("Du hast in dieser Runde mit der Spezialfaehigkeit 10 Leben hinzubekommen und machst nun " + tmp + " schaden weniger ");
+			        System.out.println("In dieser Runde hast du " + temporaryAttackValue + " Schaden gemacht");
 			    }  else {
 			      System.out.println("Der Drache ist nicht abgehoben");
 			    }
