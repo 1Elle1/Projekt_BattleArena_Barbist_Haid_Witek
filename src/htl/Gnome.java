@@ -73,11 +73,11 @@ public class Gnome extends CharackterTyps{
 	    }
 		
 		if(this.isSpecialAbilitySuccessful()) {
-			this.attackValue *= 2;
+			this.setAttackValue(attackValue *= 2);
 			System.out.println("Die Zwergenkopfnuss war erfolgreich, du machst jetzt in dieser Runde doppelt so viel schaden!");
 			return true;
 		}else {
-			this.attackValue /= 2;
+			this.setAttackValue(attackValue /= 2);
 			System.out.println("Die Zwergenkopfnuss hat nicht Funktioniert du machst diese Runde nur halb soviel Schaden");
 			return false;
 		}
@@ -107,12 +107,17 @@ public class Gnome extends CharackterTyps{
 	 
 
 	public void attack(CharackterTyps enemy) {
+		int temporaryAttackValue = this.getAttackValue();
+		
 		if(this.isSpecialAbilityActive()) {
-			dwarfHeadNut();
-			enemy.getDamage(attackValue);
-			System.out.println("Du hast in dieser Runde mit der Spezialfähigkeit " + this.attackValue + " Schaden gemacht!");
-			}else if(enemy.getHealthPoints() > attackValue && enemy.getHealthPoints() > 0) {
-				enemy.getDamage(attackValue);
+			boolean success = dwarfHeadNut();
+			temporaryAttackValue = success ? temporaryAttackValue *2 : temporaryAttackValue /2;
+			
+			System.out.println("Du hast in dieser Runde mit der Spezialfähigkeit " + temporaryAttackValue + " Schaden gemacht!");
+		}
+			
+		if(enemy.getHealthPoints() > temporaryAttackValue && enemy.getHealthPoints() > 0) {
+				enemy.getDamage(temporaryAttackValue);
 			}
 			else {
 				System.out.println("Spieler: " + enemy.getName() + " ist gestorben!");
