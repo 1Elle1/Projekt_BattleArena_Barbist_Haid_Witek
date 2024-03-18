@@ -79,7 +79,7 @@ public abstract class CharackterTyps extends Arena {
      * @param points The amount of damage points to be taken.
      */
     public  void getDamage(int points) {
-    	 this.healthPoints -= points;
+    	 this.setHealthPoints(healthPoints -= points);
     	 if (this.healthPoints < 0) {
     	        this.healthPoints = 0;
     	}

@@ -19,6 +19,7 @@ public class Dragon extends CharackterTyps {
      */
     public Dragon(String name) {
         super(name);
+        this.attackValue = calculateAttackValue();
     }
 
     /**
