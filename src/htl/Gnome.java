@@ -9,6 +9,7 @@ public class Gnome extends CharackterTyps{
 
 	public Gnome(String name) {
 		super(name);
+		this.attackValue = calculateAttackValue();
 		
 	}
 	
@@ -43,8 +44,7 @@ public class Gnome extends CharackterTyps{
 	
 	public void activateSpecialSkill() {
 	    if (this.getHealthPoints() < 50) {
-	        super.activateSpecialSkill(); 
-	        System.out.println("Spezialfähigkeit des Gnoms wurde aktiviert, da die Lebenspunkte unter 50 sind.");
+	        super.activateSpecialSkill();
 	    } else {
 	        System.out.println("Die Spezialfähigkeit des Gnoms kann nicht aktiviert werden, da die Lebenspunkte 50 oder mehr betragen.");
 	        this.setSpecialAbilityActive(false);
@@ -109,6 +109,8 @@ public class Gnome extends CharackterTyps{
 	public void attack(CharackterTyps enemy) {
 		if(this.isSpecialAbilityActive()) {
 			dwarfHeadNut();
+			enemy.getDamage(attackValue);
+			System.out.println("Du hast in dieser Runde mit der Spezialfähigkeit " + this.attackValue + " Schaden gemacht!");
 			}else if(enemy.getHealthPoints() > attackValue && enemy.getHealthPoints() > 0) {
 				enemy.getDamage(attackValue);
 			}

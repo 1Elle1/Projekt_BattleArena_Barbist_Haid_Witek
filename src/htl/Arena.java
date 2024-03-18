@@ -86,6 +86,7 @@ public class Arena{
 		}
 		System.out.println();
 		System.out.println("Du bist am zug " + attacker.getName() + " du hast noch " + attacker.getHealthPoints() +  " Leben, was möchtest du machen? Tippe 1,2 oder 3");
+		System.out.println("Dein Gegner hat noch " + victim.getHealthPoints() + " Leben");
 		attacker.outputOfTheAbilities();
 		int attackerInput = sc.nextInt();
 		
@@ -99,6 +100,23 @@ public class Arena{
 					System.out.println(victim.getName() +" Du hast Verloren " + "\n"
 							+ attacker.getName() + " du hast gewonnen!");
 					attacker.setWinnerOfTheGame(true);
+					System.out.println(
+						    "       __________\n" +
+						    "      '._==_==_=_.'\n" +
+						    "      .-\\:      /-.\n" +
+						    "     | (|:     |) |\n" +
+						    "      '-|:     |-'\n" +
+						    "        \\:.    /\n" +
+						    "         \\:  . /\n" +
+						    "          \\:  /\n" +
+						    "           \\/\n" +
+						    "         _.' '._\n" +
+						    "        `\"\"\"\"\"\"\"`\n"+
+						    "          "+ attacker.getName()
+						    
+						);
+
+
 				}
 				break;
 			case 2:
