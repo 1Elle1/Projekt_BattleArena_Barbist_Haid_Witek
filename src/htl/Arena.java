@@ -91,6 +91,14 @@ public class Arena{
 	}
 	
 	
+	
+	/**
+	 * Prints the current stats for the attacker and the victim, including health points and the status of the attacker's special ability.
+	 * It also prompts the user for their next action.
+	 *
+	 * @param attacker The character currently taking action.
+	 * @param victim The target character.
+	 */
 	public void printStats(CharackterTyps attacker, CharackterTyps victim) {
 		System.out.println("Du bist am Zug " + attacker.getName() +"\n"
 						+ "Du hast " + attacker.getHealthPoints() +  " Leben");
@@ -104,6 +112,15 @@ public class Arena{
 	
 	}
 	
+	
+	
+	/**
+	 * Announces the game's outcome by declaring the winner and the loser, and marks the attacker as the winner.
+	 * It prints a congratulatory message and a simple ASCII trophy graphic with the winner's name.
+	 *
+	 * @param attacker The character who won the game.
+	 * @param victim The character who lost the game.
+	 */
 	public void printWinnerAndLooser(CharackterTyps attacker, CharackterTyps victim) {
 		System.out.println(victim.getName() +" Du hast Verloren " + "\n"
 				+ attacker.getName() + " du hast Gewonnen!");
@@ -234,11 +251,4 @@ public class Arena{
 		 
 	}
 		
-			 
-			 
-			
-	
-	
-	
-
 }
