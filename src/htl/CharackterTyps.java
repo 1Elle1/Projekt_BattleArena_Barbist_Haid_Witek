@@ -32,7 +32,7 @@ public abstract class CharackterTyps extends Arena {
         this.name = name;
     }
 
-    public abstract int calculateAttackValue();
+    
    
     public int getHealthPoints() {
         return healthPoints;
@@ -103,7 +103,19 @@ public abstract class CharackterTyps extends Arena {
         }
     }
     
+    
+    /**
+     * Abstract method for displaying a character's available abilities. Implementation details will vary by character type.
+     */
     public abstract void outputOfTheAbilities();
     
 
+    
+    /**
+     * Abstract method to calculate the attack value of a character. 
+     * The implementation will determine the attack strength based on character attributes and current game state.
+     * @return The calculated attack value as an integer.
+     */
+
+    public abstract int calculateAttackValue();
 } 
