@@ -1,6 +1,5 @@
 package htl;
 
-import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Dragon extends CharackterTyps {
@@ -113,37 +112,11 @@ public class Dragon extends CharackterTyps {
     
     
     public void outputOfTheAbilities() {
-        boolean validChoice = false;
-        int choice = 0;
-
-        while (!validChoice) {
-            System.out.println("1. Angreifen \n"
-                    + "2. Fliegen aktivieren \n"
-                    + "3. Fliegen deaktivieren");
-
-            Scanner scanner = new Scanner(System.in);
-            choice = scanner.nextInt();
-
-            switch (choice) {
-                case 1:
-                    System.out.println("Angreifen!");
-                    validChoice = true;
-                    break;
-                case 2:
-                    System.out.println("Fliegen aktivieren!");
-                    validChoice = true;
-                    break;
-                case 3:
-                    System.out.println("Fliegen deaktivieren!");
-                    validChoice = true;
-                    break;
-                default:
-                    System.out.println("Ungültige Eingabe! Bitte wähle eine Zahl zwischen 1 und 3.");
-            }
-        }
-    }
-	    
+		System.out.println("1. Angreifen \n"
+						 + "2. Fliegen aktivieren \n"
+						 + "3. Fliegen deaktivieren");
 	}
+	
     
     
-
+} 
