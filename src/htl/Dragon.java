@@ -110,7 +110,9 @@ public class Dragon extends CharackterTyps {
 	    }
     	}
     
-    
+    /**
+	 * Displays the list of available abilities to the user.
+	 */
     public void outputOfTheAbilities() {
 		System.out.println("1. Angreifen \n"
 						 + "2. Fliegen aktivieren \n"

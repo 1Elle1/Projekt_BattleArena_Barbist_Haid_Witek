@@ -116,6 +116,5 @@ public abstract class CharackterTyps extends Arena {
      * The implementation will determine the attack strength based on character attributes and current game state.
      * @return The calculated attack value as an integer.
      */
-
     public abstract int calculateAttackValue();
 } 
