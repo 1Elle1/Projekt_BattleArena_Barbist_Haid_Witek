@@ -138,7 +138,7 @@ public class Dragon extends CharackterTyps {
                     validChoice = true;
                     break;
                 default:
-                    System.out.println("UngÃ¼ltige Eingabe! Bitte wÃ¤hle eine Zahl zwischen 1 und 3.");
+                    System.out.println("Ungültige Eingabe! Bitte wähle eine Zahl zwischen 1 und 3.");
             }
         }
     }

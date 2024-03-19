@@ -46,7 +46,7 @@ public class Gnome extends CharackterTyps{
 	    if (this.getHealthPoints() < 50) {
 	        super.activateSpecialSkill();
 	    } else {
-	        System.out.println("Die Spezialfï¿½higkeit des Gnoms kann nicht aktiviert werden, da die Lebenspunkte 50 oder mehr betragen.");
+	        System.out.println("Die Spezialfähigkeit des Gnoms kann nicht aktiviert werden, da die Lebenspunkte 50 oder mehr betragen.");
 	        this.setSpecialAbilityActive(false);
 	    }
 	}
@@ -119,7 +119,7 @@ public class Gnome extends CharackterTyps{
 		if(this.isSpecialAbilityActive()) {
 			boolean success = dwarfHeadNut();
 			temporaryAttackValue = success ? temporaryAttackValue *2 : temporaryAttackValue /2;
-			System.out.println("Du hast in dieser Runde mit der Spezialfï¿½higkeit " + temporaryAttackValue + " Schaden gemacht!");
+			System.out.println("Du hast in dieser Runde mit der Spezialfähigkeit " + temporaryAttackValue + " Schaden gemacht!");
 		}
 		
 		enemy.getDamage(temporaryAttackValue);

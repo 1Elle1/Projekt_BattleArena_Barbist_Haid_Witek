@@ -30,10 +30,10 @@ public class Arena{
 	public void pickBeginner() {
 		int numberOfRandomNumber = ThreadLocalRandom.current().nextInt(0, 1 + 1);
 		if(numberOfRandomNumber == 0) {
-			System.out.println("Player 1, du fï¿½ngst an!");
+			System.out.println("Player 1, du fängst an!");
 			this.setBeginner(1);;
 		}else {
-			System.out.println("Player 2, du fï¿½ngst an!");
+			System.out.println("Player 2, du fängst an!");
 			this.setBeginner(2);
 		}
 	}
@@ -49,15 +49,15 @@ public class Arena{
 		boolean validInput = false;
 		
 		while(!validInput) {
-		System.out.println("Zurzeit stehen 'Gnome' und 'Dragon' als Charaktere zur Verfï¿½gung!");
+		System.out.println("Zurzeit stehen 'Gnome' und 'Dragon' als Charaktere zur Verfügung!");
 		System.out.println();
-		System.out.println("Welche Charakter mï¿½chten sie spielen Player1:");
+		System.out.println("Welche Charakter möchten sie spielen Player1:");
 		String p1InputCharakter = sc.nextLine();
 		
 		if((!p1InputCharakter.equalsIgnoreCase("Gnome")) && (!p1InputCharakter.equalsIgnoreCase("Dragon"))) {
 			System.out.println("Falsche Eingabe, bitte Dragon oder Gnome eingeben!");
 		}else {
-			System.out.println("Wie soll der " + p1InputCharakter + " heiï¿½en?");
+			System.out.println("Wie soll der " + p1InputCharakter + " heißen?");
 			String p1InputName = sc.nextLine();
 			if(p1InputCharakter.equalsIgnoreCase("Gnome")) {
 				p1 = new Gnome(p1InputName);
@@ -76,15 +76,15 @@ public class Arena{
 	}
 		
 		if(temp == 1) {
-			System.out.println("Player2 du bist der Drache, wie soll er heiï¿½en?");
+			System.out.println("Player2 du bist der Drache, wie soll er heißen?");
 			String p2Inputname = sc.nextLine();
 			p2 = new Dragon(p2Inputname);
-			System.out.println("Player2 dein Drache heiï¿½t: " + p2Inputname);
+			System.out.println("Player2 dein Drache heißt: " + p2Inputname);
 		}else if(temp == 2) {
-			System.out.println("Player2 du bist der Gnome, wie soll er heiï¿½en?");
+			System.out.println("Player2 du bist der Gnome, wie soll er heißen?");
 			String p2Inputname = sc.nextLine();
 			p2 = new Gnome(p2Inputname);
-			System.out.println("Player2 dein Gnome heiï¿½t: " + p2Inputname);
+			System.out.println("Player2 dein Gnome heißt: " + p2Inputname);
 		}
 		
 		
@@ -95,12 +95,12 @@ public class Arena{
 		System.out.println("Du bist am Zug " + attacker.getName() +"\n"
 						+ "Du hast " + attacker.getHealthPoints() +  " Leben");
 		if(attacker.isSpecialAbilityActive()) {
-			System.out.println("Deine Spezielfï¿½higkeit ist Aktiv");
+			System.out.println("Deine Spezielfähigkeit ist Aktiv");
 		}else {
-			System.out.println("Deine Spezielfï¿½higkeit ist nicht Aktiv");
+			System.out.println("Deine Spezielfähigkeit ist nicht Aktiv");
 		}
 		System.out.println("Dein Gegner hat noch " + victim.getHealthPoints() + " Leben \n");
-		System.out.println("Wie mï¿½chtest du fortfahren? Tippe 1,2 oder 3");
+		System.out.println("Wie möchtest du fortfahren? Tippe 1,2 oder 3");
 	
 	}
 	
@@ -180,11 +180,11 @@ public class Arena{
 				if(!attacker.isSpecialAbilityActive()) {
 					attacker.activateSpecialSkill();
 					if(attacker.isSpecialAbilityActive()) {
-						System.out.println(attacker.getName()+ " hat die Spezialfï¿½higkeit aktiviert!");
+						System.out.println(attacker.getName()+ " hat die Spezialfähigkeit aktiviert!");
 					}
 					
 				}else {
-					System.out.println("Die Spezialfï¿½higkeit wurde wurde schon aktiviert!");
+					System.out.println("Die Spezialfähigkeit wurde wurde schon aktiviert!");
 					simulateCombat(attacker, victim);
 				}
 				
@@ -192,9 +192,9 @@ public class Arena{
 			case 3: 
 				if(attacker.isSpecialAbilityActive()) {
 					attacker.deactivateSpecialSkill();
-					System.out.println(attacker.getName() + " deine Spezialfï¿½higkeit wurde deaktiviert!");
+					System.out.println(attacker.getName() + " deine Spezialfähigkeit wurde deaktiviert!");
 				}else {
-					System.out.println("Die Spezialfï¿½higkeit ist nicht aktiviert!");
+					System.out.println("Die Spezialfähigkeit ist nicht aktiviert!");
 					simulateCombat(attacker, victim);
 				}
 				break;
