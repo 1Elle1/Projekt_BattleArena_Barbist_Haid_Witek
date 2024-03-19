@@ -107,6 +107,18 @@ public class Gnome extends CharackterTyps{
 	    }
 	 
 
+	 
+	 
+	 
+	 /**
+	  * Executes an attack on an enemy character. The method first checks if the enemy is still alive.
+	  * If so, it adjusts the attacking character's attack value based on whether their special ability is active.
+	  * A successful use of the special ability doubles the temporary attack value, while a failure halves it.
+	  * The enemy then receives damage based on the (adjusted) attack value. If the enemy dies as a result of the attack,
+	  * the attacking character is marked as the winner of the game.
+	  *
+	  * @param enemy The enemy character to be attacked. Must be an instance of CharackterTyps.
+	  */
 	public void attack(CharackterTyps enemy) {
 		
 		if (enemy.getHealthPoints() <= 0) {
@@ -132,7 +144,9 @@ public class Gnome extends CharackterTyps{
 	}
 	
 	
-	
+	/**
+	 * Displays the list of available abilities to the user.
+	 */
 	public void outputOfTheAbilities() {
 		System.out.println("1. Angreifen \n"
 						 + "2. Zergenkopfnuss aktivieren \n"
