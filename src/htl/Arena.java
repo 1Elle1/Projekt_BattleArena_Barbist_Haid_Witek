@@ -171,24 +171,7 @@ public class Arena{
 					attacker.attack(victim);
 					System.out.println("Du hast " + victim.getName() + " angegriffen! Er hat noch " + victim.getHealthPoints() + " Leben");
 				}else {
-					System.out.println(victim.getName() +" Du hast Verloren " + "\n"
-							+ attacker.getName() + " du hast Gewonnen!");
-					attacker.setWinnerOfTheGame(true);
-					System.out.println(
-						    "       __________\n" +
-						    "      '._==_==_=_.'\n" +
-						    "      .-\\:      /-.\n" +
-						    "     | (|:     |) |\n" +
-						    "      '-|:     |-'\n" +
-						    "        \\:.    /\n" +
-						    "         \\:  . /\n" +
-						    "          \\:  /\n" +
-						    "           \\/\n" +
-						    "         _.' '._\n" +
-						    "        `\"\"\"\"\"\"\"`\n"+
-						    "          "+ attacker.getName()
-						    
-						);
+					printWinnerAndLooser(attacker, victim);
 
 
 				}
@@ -214,6 +197,10 @@ public class Arena{
 					System.out.println("Die Spezialfähigkeit ist nicht aktiviert!");
 					simulateCombat(attacker, victim);
 				}
+				break;
+				
+				default:
+				System.out.println("Fehlerhafte eingabe, nochmal eingeben!");
 				break;
 			
 			
